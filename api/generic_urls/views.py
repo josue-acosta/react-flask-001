@@ -1,4 +1,5 @@
 from flask import Blueprint
+from api import app
 
 from datetime import datetime
 
@@ -8,7 +9,9 @@ generic_urls_blueprint = Blueprint("generic_urls", __name__)
 
 @generic_urls_blueprint.route("/")
 def index():
-    return {"message":"success"}
+    return app.send_static_file("index.html")
+
+
 
 @generic_urls_blueprint.route("/today")
 def get_today():
