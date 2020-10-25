@@ -6,7 +6,7 @@ function App() {
     const [today, setToday] = useState(0);
 
     useEffect(() => {
-        fetch('/today')
+        fetch('/v1/api/today')
             .then(res => res.json())
             .then(data => {
                 setToday(data.today);
